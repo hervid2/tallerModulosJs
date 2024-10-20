@@ -23,9 +23,19 @@ export function visa (numero){
     return exp.test(numero);
 }
 
-//El programa de bebe permitir el
-// ingreso de enteros positivos  máximo 16 caracteres numéricos.
-//Si se ingresa un caracter diferente debe mostrar un mensaje de
-//error y volver a solicitar el ingreso del número de tarjeta.
+// Diseñar un programa que permita validar el tipo de tarjeta
+// de crédito que registra el operador, para ello debemos tener en 
+// cuenta que las diferentes tarjetas tienen diferentes nomenclaturas:
+// - American Express: 15 dígitos y empieza por 34 - 37.
+// - Diners Club: tiene 14 dígitos y empieza por 300-305 0 36-38.
+// - Discover: 16 dígitos y empieza por 6011.
+// - Mastercard: 16 dígitos y empieza por 51-55.
+// - Visa: 16 dígitos y empieza por 4.
+// El programa solo se debe permitir el ingreso de enteros positivos
+// y máximo 16 caracteres, si el operador ingresa un caracter no 
+// permitido se debe mostrar por pantalla el error y solicitar nuevamente
+// el número de su tarjeta de crédito. Para este ejercicio se solicita
+// trabajar con módulos, expresiones regulares y condicionales. Si está
+// permitido solicitar al operador el tipo de su tarjeta de crédito.
 
 
