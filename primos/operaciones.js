@@ -5,26 +5,36 @@ export function sumar(numeros) {
 
 // Función para contar números primos
 export function contarPrimos(numeros) {
-    return numeros.filter(esPrimo).length; //filter() invoca como argumento la funcion esPrimo() para filtrar los primos y luego los cuenta con .length
+    const primos = numeros.filter(esPrimo); //filter() invoca como argumento la funcion esPrimo() para filtrar los primos y luego los cuenta con .length
+    return {
+        cantidad: primos.length,
+        lista: primos
+    };
 }
 
 // Función para contar números pares
 export function contarPares(numeros) {
-    return numeros.filter(num => num % 2 === 0).length;
+    const pares = numeros.filter(num => num % 2 === 0);
+    return {
+        cantidad: pares.length,
+        lista: pares
+    };
 }
 
 // Función para calcular el promedio de números primos
 export function promedioPrimos(numeros) {
     const primos = numeros.filter(esPrimo);
-    if (primos.length === 0) return 0;
-    return primos.reduce((a, b) => a + b, 0) / primos.length;
+    if (primos.length === 0) return {promedio: 0, lista:[]};
+    const promedio = primos.reduce((a, b) => a + b, 0) / primos.length;
+    return{ promedio, lista: primos};
 }
 
 // Función para calcular el promedio de números pares
 export function promedioPares(numeros) {
-    const pares = numeros.filter(num => num % 2 === 0);
-    if (pares.length === 0) return 0;
-    return pares.reduce((a, b) => a + b, 0) / pares.length;
+    const pares = numeros.filter(num => num % 2 === 0); //se calcula cuántos pares tiene el array
+    if (pares.length === 0) return {promedio: 0, lista: []};
+    const promedio = pares.reduce((a, b) => a + b, 0) / pares.length;//reduce() cuenta los 
+    return {promedio, lista: pares};
 }
 
 // Función para determinar si un número es primo
@@ -35,29 +45,6 @@ export function esPrimo(num) {
     }
     return true; //todos los números que pasen por los conodicionales anteriores como true, significa que sí son primos
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Diseñar un programa que me solicite ingresar n cantidad de números por teclado,
 // luego de ingresar los números el programa me debe solicitar qué operación deseo 

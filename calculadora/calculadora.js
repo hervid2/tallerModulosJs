@@ -1,24 +1,25 @@
-
-    // función para sumar dos números
-   export function suma(a, b) {
+// Clase Calculadora
+export class Calculadora {
+    // Método para sumar dos números
+    suma(a, b) {
         this.validarNumeros(a, b);
         return a + b;
     }
 
-    // función para restar dos números
-    export function resta(a, b) {
+    // Método para restar dos números
+    resta(a, b) {
         this.validarNumeros(a, b);
         return a - b;
     }
 
-    // función para multiplicar dos números
-    export function multiplicacion(a, b) {
+    // Método para multiplicar dos números
+    multiplicacion(a, b) {
         this.validarNumeros(a, b);
         return a * b;
     }
 
-    // función para dividir dos números
-    export function division(a, b) {
+    // Método para dividir dos números
+    division(a, b) {
         this.validarNumeros(a, b);
         if (b === 0) {
             throw new Error("Error: No se puede dividir por cero.");
@@ -26,14 +27,16 @@
         return a / b;
     }
 
-    // función para validar que ambos parámetros son números
-    export function validarNumeros(...numeros) {
-        for (const num of numeros) {
-            if (typeof num !== 'number' || isNaN(num)) {
-                throw new Error(`Error: '${num}' no es un número válido.`);
+    // Método para validar que ambos parámetros son números 
+    validarNumeros(...numeros) {//Este método se encapsulará arriba en los métodos de las operaciones
+        for (const cifra of numeros) {
+            if (typeof cifra !== 'number' || isNaN(cifra)) {
+                throw new Error(`Error: '${cifra}' no es un número válido.`);
             }
         }
     }
+}
+
 
 
 

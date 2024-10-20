@@ -1,16 +1,22 @@
-import { suma, resta, multiplicacion, division } from "./calculadora.js";
+import { Calculadora } from "./calculadora.js";  // Importar la clase Calculadora
 
+// Solicitar al usuario que ingrese dos números y convertirlos a números decimales
+let a = parseFloat(prompt("Ingrese el primer número:"));
+let b = parseFloat(prompt("Ingrese el segundo número:"));
+
+// Crear una instancia de la clase Calculadora
+const calculadora = new Calculadora();
 
 try {
-  
-    console.log(`Suma de ${a,b} es: `+ suma(a, b));
-    console.log(`Resta de ${a,b} es: `+ resta(a, b));
-    console.log(`Multiplicación de ${a,b} es: `+ multiplicacion(a, b));
-    console.log(`División de ${a,b} es: `+ division(a, b));
-  
+    console.log(`Suma de ${a} y ${b} es: ` + calculadora.suma(a, b));
+    console.log(`Resta de ${a} y ${b} es: ` + calculadora.resta(a, b));
+    console.log(`Multiplicación de ${a} y ${b} es: ` + calculadora.multiplicacion(a, b));
+    console.log(`División de ${a} y ${b} es: ` + calculadora.division(a, b));
 } catch (error) {
     console.error(error.message);
 }
+
+
 
 
 
